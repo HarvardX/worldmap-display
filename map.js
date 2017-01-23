@@ -52,6 +52,19 @@ function on_resize() {
 $(window).on("resize", on_resize);
 on_resize();
 
+// toggle table
+$('#worldmap-table-view-button').click(function() {
+    $('.worldmap-table-view').toggleClass('closed');
+    $('.worldmap-table-view').toggleClass('open');
+});
+
+$("#worldmap-table-view-button").on('keypress', function(event) {
+            var key = event.keyCode ? event.keyCode : event.which;
+            if (key === 13 || key === 32) {
+                jQuery(event.target).trigger('click');
+            }
+        });
+
 var json;
 
 function round(num) {
@@ -111,6 +124,51 @@ function selection(choice) {
             if (d.properties.name)
                 return "pointer";
             return "auto";
+        });
+
+        /* Accessible table code added by Luis Duarte @HarvardX*/
+
+        // clear the table each time the user changes the question type
+        var table = d3.select(element)
+            .selectAll('.worldmap-table-view');  
+        table.selectAll('table').remove();
+
+        // start a new table
+        var tabe = table
+            .append('table')
+            .attr('id', 'worldmap-table')
+            .attr('class', 'tablesorter')
+            .attr('role', 'table')
+            .attr('aria-label', json.statistics[choice].title);
+        var thead = table.selectAll('table').append('thead');
+        var tbody = table.selectAll('table').append('tbody');
+
+        // adds a title 
+        thead.append('tr')
+            .html(function(d, i) {
+                return "<th tabindex='0' scope='col' aria-label='Hit ENTER or SPACE to alphabetize items in list by country'>Country</th><th scope='col' aria-label='Hit ENTER or SPACE or order by "+json.statistics[choice].title+" value' tabindex='0'>" + json.statistics[choice].title + "</th>";
+            });
+
+        // create a new set of rows given the data the user has selected
+        tbody.selectAll('tr').data(Object.keys(json.statistics[choice].countries))
+            .enter()
+            .append('tr')
+            .attr('scope', 'row')
+            .html(function(d, i) {
+
+                var countryValue = json.statistics[choice].countries[d];
+                return "<td tabindex='0' role='decoration'>" + d+ "</td><td aria-label='"+json.statistics[choice].title+" value: "+json.statistics[choice].countries[d]+"' tabindex='0'>" + json.statistics[choice].countries[d] + "</td>";
+            });
+
+        // turns on jquery plugin that allows table to be sorted by clicking on the header
+        $("#worldmap-table").tablesorter();
+
+        // adds keyboard accessibility so that on hitting SPACE or ENTER over a header, it sorts as well
+        $("#worldmap-table thead tr").on('keypress', function(event) {
+            var key = event.keyCode ? event.keyCode : event.which;
+            if (key === 13 || key === 32) {
+                jQuery(event.target).trigger('click');
+            }
         });
 }
 
