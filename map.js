@@ -146,7 +146,7 @@ function selection(choice) {
         // adds a title 
         thead.append('tr')
             .html(function(d, i) {
-                return "<th tabindex='0' scope='col' aria-label='Hit ENTER or SPACE to alphabetize items in list by country'>Country</th><th scope='col' aria-label='Hit ENTER or SPACE or order by "+json.statistics[choice].title+" value' tabindex='0'>" + json.statistics[choice].title + "</th>";
+                return "<th tabindex='0' scope='col' aria-label='Country' aria-describedby='info'>Country</th><th scope='col' aria-describedby='info' tabindex='0'>" + json.statistics[choice].title + "</th>";
             });
 
         // create a new set of rows given the data the user has selected
