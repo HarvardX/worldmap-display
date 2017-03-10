@@ -1,3 +1,7 @@
+.worldmap-display {
+    font-family:  "Lucida Grande", Arial, sans-serif;
+}
+
 .worldmap-display .country {
     fill: #bdc3c7;
     /* #ccc */
@@ -35,7 +39,6 @@
 
 .worldmap-display .worldmap-box {
     font-size: 15px;
-    font-family: "Lucida Grande", sans-serif;
     color: white;
     padding: 14px 18px;
     border-radius: 10px;
@@ -103,7 +106,6 @@
 .country-stats td {
     padding: 10px;
     font-size: 15px;
-    font-family: "Lucida Grande", sans-serif;
 }
 
 td.stat-name {
@@ -118,10 +120,9 @@ td.stat-global {
 .custom-html {
     padding: 10px;
     font-size: 15px;
-    font-family: "Lucida Grande", sans-serif;
 }
 
-#worldmap-table-view-button {
+.worldmap-table-view-button {
     background-color: rgba(66, 139, 202, 0.8);
     color: white;
     width: 50px;
@@ -129,7 +130,6 @@ td.stat-global {
     padding: 10px;
     border: 1px solid rgba(66, 139, 202, 0.8);
     border-radius: 5px;
-    font-family: "Lucida Grande", Arial, sans-serif;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
@@ -137,11 +137,11 @@ td.stat-global {
     margin-bottom: 20px;
 }
 
-#worldmap-table-view-button:hover {
+.worldmap-table-view-button:hover {
     background-color: rgba(66, 139, 202, 1);
 }
 
-#worldmap-table{
+.worldmap-table{
     margin-top: 20px;
     text-align: center;
     margin-left: auto;
@@ -149,7 +149,6 @@ td.stat-global {
     border-top: 1px solid #888;
     border-bottom: 1px solid #888;
     width: 500px;
-    font-family:  "Lucida Grande", Arial, sans-serif;
 }
 
 .worldmap-table-view.closed {
@@ -157,32 +156,27 @@ td.stat-global {
     margin-bottom: -999999px;
 }
 
-.worldmap-table-view.open {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-#worldmap-table thead tr {
+.worldmap-table thead tr {
     cursor: pointer;
     font-size: 15px;
     background-color: rgba(0, 104, 55, 0.8);
     color: white;
 }
 
-#worldmap-table thead tr th {
+.worldmap-table thead tr th {
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-#worldmap-table tbody tr:nth-child(odd) {
+.worldmap-table tbody tr:nth-child(odd) {
     background-color: rgba(135, 89, 182, 0.4);
 }
 
-#worldmap-table tbody tr:nth-child(even) {
+.worldmap-table tbody tr:nth-child(even) {
     background-color: rgba(120, 189, 121, 0.3);
 }
 
-#worldmap-table tbody tr td {
+.worldmap-table tbody tr td {
     padding: 10px;
     font-size: 12px;
 }
