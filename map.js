@@ -53,7 +53,7 @@ $(window).on("resize", on_resize);
 on_resize();
 
 // toggle table
-$('#worldmap-table-view-button').click(function() {
+$('.worldmap-table-view-button').click(function() {
     $('.worldmap-table-view').toggleClass('closed');
 });
 
@@ -151,10 +151,10 @@ function selection(choice) {
             });
 
         // turns on jquery plugin that allows table to be sorted by clicking on the header
-        $("#worldmap-table").tablesorter();
+        $(".worldmap-table").tablesorter();
 
         // adds keyboard accessibility so that on hitting SPACE or ENTER over a header, it sorts as well
-        $("#worldmap-table thead tr").on("keypress", function(event) {
+        $(".worldmap-table thead tr").on("keypress", function(event) {
             var key = event.keyCode ? event.keyCode : event.which;
             if (key === 13 || key === 32) {
                 jQuery(event.target).trigger("click");

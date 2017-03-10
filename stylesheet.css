@@ -125,16 +125,16 @@ td.stat-global {
 .worldmap-table-view-button {
     background-color: rgba(66, 139, 202, 0.8);
     color: white;
-    width: 50px;
+    width: 60px;
     text-align: center;
     padding: 10px;
     border: 1px solid rgba(66, 139, 202, 0.8);
     border-radius: 5px;
     cursor: pointer;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
+    display: block;
 }
 
 .worldmap-table-view-button:hover {
